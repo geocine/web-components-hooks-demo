@@ -1,0 +1,31 @@
+{
+  "name": "web-components-hooks-demo",
+  "version": "1.0.0",
+  "description": "lit-html, haunted, goober",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/geocine/lit-html-hooks-demo.git"
+  },
+  "keywords": [
+    "lit-html",
+    "haunted",
+    "goober"
+  ],
+  "author": "Aivan Monceller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/geocine/lit-html-hooks-demo/issues"
+  },
+  "homepage": "https://github.com/geocine/lit-html-hooks-demo#readme",
+  "dependencies": {
+    "goober": "^1.2.1",
+    "haunted": "^4.2.0",
+    "lit-html": "^1.0.0",
+    "navigo": "^7.1.2"
+  }
+}

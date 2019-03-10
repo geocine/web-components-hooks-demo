@@ -10,7 +10,7 @@ const CartClass = css`
 const CartPage = () => {
   return html`
     <div class=${CartClass}>Cart Page</div>
-    <a href="/">Home</a>
+    <router-link to="/">Home</router-link>
   `;
 }
 

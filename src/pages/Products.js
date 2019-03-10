@@ -14,7 +14,7 @@ const ProductsPage = () => {
   return html`
     <div id="count" class="${CountClass}">${count}</div>
     <button type="button" @click=${() => setCount(count + 1)}>Increment</button>
-    <a href="/cart">Cart</a>
+    <router-link to="/cart">Cart</router-link>
   `;
 }
 

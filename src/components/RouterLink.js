@@ -1,4 +1,5 @@
 import { html } from "lit-html";
+import { component } from "haunted";
 import { Router } from "../router";
 
 const RouterLink = ({to="/"}) => {
@@ -9,6 +10,16 @@ const RouterLink = ({to="/"}) => {
   };
 
   return html`
+    <style>
+      :host {
+        display: block;
+      }
+      a {
+        display: block;
+        text-decoration: var(--text-decoration, none);
+        color: var(--color, black);
+      }
+    </style>
     <a href="${to}" @click=${navigate}>
       <slot></slot>
     </a>
@@ -17,4 +28,6 @@ const RouterLink = ({to="/"}) => {
 
 RouterLink.observedAttributes = ['to'];
 
-export default RouterLink;
+customElements.define(
+  "router-link", component(RouterLink)
+);

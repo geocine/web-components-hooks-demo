@@ -2,7 +2,7 @@ import Navigo from "navigo";
 import { component } from "haunted";
 
 export class Router {
-  constructor(root,routes) {
+  constructor(root, routes) {
     if (!Router.instance) {
       Router.instance = this;
     } else {
@@ -29,13 +29,16 @@ export class Router {
   init() {
     this.routes.forEach(route => {
       this.router
-      .on(route.path, params => {
-        if(!customElements.get(route.tag)){
-          customElements.define(route.tag,component(route.page));
-        }
-        Router.inject(route.tag);
-      })
-      .resolve();
+        .on(route.path, params => {
+          if (!customElements.get(route.tag)) {
+            customElements.define(
+              route.tag,
+              component(route.page, HTMLElement, { useShadowDOM: false })
+            );
+          }
+          Router.inject(route.tag);
+        })
+        .resolve();
     });
   }
 }

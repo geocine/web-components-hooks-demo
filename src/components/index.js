@@ -1,5 +1,7 @@
 import RouterLink from "./RouterLink";
+import MainNavigation from "./MainNavigation";
 
 export {
-  RouterLink
+  RouterLink,
+  MainNavigation
 }

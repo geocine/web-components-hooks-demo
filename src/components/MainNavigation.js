@@ -27,9 +27,10 @@ const MainNavigationStyle = css`
   li {
     margin: 0 1rem;
     border-radius: 5px;
-    padding: 0.5rem 1rem;
     router-link {
       --color: white;
+      --border-radius: 5px;
+      --padding: 0.5rem 1rem;
     }
     &:hover,
     &:active {

@@ -18,6 +18,8 @@ const RouterLink = ({to="/"}) => {
         display: block;
         text-decoration: var(--text-decoration, none);
         color: var(--color, black);
+        border-radius: var(--border-radius, 0);
+        padding: var(--padding,0);
       }
     </style>
     <a href="${to}" @click=${navigate}>

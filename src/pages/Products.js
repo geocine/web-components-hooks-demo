@@ -40,7 +40,6 @@ const ProductsPage = () => {
         </li>
       </ul>
     </main>
-    <router-link to="/cart">Hello Link</router-link>
   `;
 };
 

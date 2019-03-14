@@ -6,8 +6,11 @@ const RouterLink = (element) => {
   const navigate = e => {
     e.preventDefault();
     const router = Router.instance.router;
-    router.navigate(e.path[1].href, true);
+    const link = e.path.find(node => node.nodeName == "A");
+    router.navigate(link.href, true);
   };
+  const active = element.to == location.pathname;
+
   return html`
     <style>
       :host {
@@ -20,8 +23,12 @@ const RouterLink = (element) => {
         border-radius: var(--border-radius, 0);
         padding: var(--padding,0);
       }
+      a.active {
+        background: var(--background-active, white);
+        color: var(--color-active, black);
+      }
     </style>
-    <a href="${element.to}" @click=${navigate}>
+    <a href="${element.to}" @click=${navigate} class="${active ? 'active' :''}">
       <slot></slot>
     </a>
   `;

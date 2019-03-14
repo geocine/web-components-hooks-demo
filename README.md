@@ -2,7 +2,9 @@
 
 This demonstrates a basic shopping cart built using Web Components. It also has State Management, Routing, CSS-in-JS
 
-![](https://i.imgur.com/yT9B48W.png)
+<p align="center">
+ <img src="https://i.imgur.com/yT9B48W.png"></img>
+</p>
 
 Technologies used:
 - Web Components through [lit-html](https://github.com/Polymer/lit-html)

@@ -1,5 +1,6 @@
 import "./components";
-
+import "./context/shop-context";
+import "./context/GlobalState";
 import { Router } from "./router";
 import { ProductsPage, CartPage } from "./pages";
 

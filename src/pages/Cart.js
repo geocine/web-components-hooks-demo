@@ -27,21 +27,46 @@ const CartClass = css`
 
 const CartPage = () => {
   return html`
-    <main-navigation></main-navigation>
-    <main class="${CartClass}">
-      <ul>
-          <li>
-            <div>
-              <strong>Title</strong> - 100 (2)
-            </div>
-            <div>
-              <button>
-                Remove from Cart
-              </button>
-            </div>
-          </li>
-      </ul>
-    </main>
+    <shop-consumer
+      .render=${context => html`
+        <main-navigation
+          .cartItemNumber=${context.cart.reduce((count, curItem) => {
+            return count + curItem.quantity;
+          }, 0)}
+        >
+        </main-navigation>
+        <main class="${CartClass}">
+          ${context.cart.length <= 0
+            ? html`
+                <p>No Item in the Cart!</p>
+              `
+            : ""}
+          <ul>
+            ${context.cart.map(
+              cartItem => html`
+                <li>
+                  <div>
+                    <strong>${cartItem.title}</strong> - ${cartItem.price}
+                    (${cartItem.quantity})
+                  </div>
+                  <div>
+                    <button
+                      @click=${context.removeProductFromCart.bind(
+                        this,
+                        cartItem.id
+                      )}
+                    >
+                      Remove from Cart
+                    </button>
+                  </div>
+                </li>
+              `
+            )}
+          </ul>
+        </main>
+      `}
+    >
+    </shop-consumer>
   `;
 };
 

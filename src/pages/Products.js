@@ -1,5 +1,4 @@
 import { html } from "lit-html";
-import { useState } from "haunted";
 import { css } from "goober";
 
 const ProductsStyle = css`
@@ -24,22 +23,38 @@ const ProductsStyle = css`
 `;
 
 const ProductsPage = () => {
-  const [count, setCount] = useState(0);
-
   return html`
-  <main-navigation></main-navigation>
-    <main class="${ProductsStyle}">
-      <ul>
-        <li>
-          <div><strong>Title</strong> - 100</div>
-          <div>
-            <button>
-              Add to Cart
-            </button>
-          </div>
-        </li>
-      </ul>
-    </main>
+    <shop-consumer
+      .render=${context => html`
+        <main-navigation
+          .cartItemNumber=${context.cart.reduce((count, curItem) => {
+            return count + curItem.quantity;
+          }, 0)}
+        >
+        </main-navigation>
+        <main class="${ProductsStyle}">
+          <ul>
+            ${context.products.map(
+              product => html`
+                <li>
+                  <div>
+                    <strong>${product.title}</strong> - ${product.price}
+                  </div>
+                  <div>
+                    <button
+                      @click=${context.addProductToCart.bind(this, product)}
+                    >
+                      Add to Cart
+                    </button>
+                  </div>
+                </li>
+              `
+            )}
+          </ul>
+        </main>
+      `}
+    >
+    </shop-consumer>
   `;
 };
 

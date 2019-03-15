@@ -2,7 +2,7 @@ import { html } from "lit-html";
 import { component } from "haunted";
 import { Router } from "../router";
 
-const RouterLink = (element) => {
+const RouterLink = element => {
   const navigate = e => {
     e.preventDefault();
     const router = Router.instance.router;
@@ -21,21 +21,23 @@ const RouterLink = (element) => {
         text-decoration: var(--text-decoration, none);
         color: var(--color, black);
         border-radius: var(--border-radius, 0);
-        padding: var(--padding,0);
+        padding: var(--padding, 0);
       }
       a.active {
         background: var(--background-active, white);
         color: var(--color-active, black);
       }
     </style>
-    <a href="${element.to}" @click=${navigate} class="${active ? 'active' :''}">
+    <a
+      href="${element.to}"
+      @click=${navigate}
+      class="${active ? "active" : ""}"
+    >
       <slot></slot>
     </a>
   `;
 };
 
-RouterLink.observedAttributes = ['to'];
+RouterLink.observedAttributes = ["to"];
 
-customElements.define(
-  "router-link", component(RouterLink)
-);
+customElements.define("router-link", component(RouterLink));

@@ -3,9 +3,9 @@
 
 
 goober@^1.2.1:
-  version "1.2.1"
-  resolved "https://registry.yarnpkg.com/goober/-/goober-1.2.1.tgz#945b701e43c31c80aa186f643fa71c71bc9cda4f"
-  integrity sha512-weA/el3eSRBoS6L0r9A1PqbAh3wNh1Brv62fdLxb8TJRwNvi9pfOL9dz4wz8CQOjtiFjp1rTpJLxAv1xJehMmA==
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/goober/-/goober-1.2.2.tgz#53b8b7ace189764f0bf44e16d1d8bade713ef23f"
+  integrity sha512-bD17qSunXvKCvIwtUGAZnJvlqgJ71XU9K/NotIkqgVgtMya4cEAxyGBethuVfmgiLKlTCS1s4VOuPwFs0XkQfA==
 
 haunted@^4.2.0:
   version "4.2.0"

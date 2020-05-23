@@ -27,7 +27,6 @@ export class Router {
   }
 
   init() {
-    console.log(this.routes);
     this.routes.forEach((route) => {
       this.router
         .on(route.path, (params) => {

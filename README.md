@@ -4,7 +4,7 @@ This demonstrates a basic shopping cart built using Web Components. It also has 
 
 <br>
 <p align="center">
- <img src="https://i.imgur.com/yT9B48W.png"></img>
+ <img src="https://i.imgur.com/OESQ8sq.gif"></img>
 </p>
 
 Technologies used:

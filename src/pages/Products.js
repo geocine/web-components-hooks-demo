@@ -1,5 +1,5 @@
-import { html } from "lit-html";
-import { css } from "goober";
+import { html } from 'https://unpkg.com/lit-html/lit-html.js';
+import { css } from 'https://unpkg.com/goober/dist/goober.module.js';
 
 const ProductsStyle = css`
   width: 50rem;
@@ -25,7 +25,7 @@ const ProductsStyle = css`
 const ProductsPage = () => {
   return html`
     <shop-consumer
-      .render=${context => html`
+      .render=${(context) => html`
         <main-navigation
           .cartItemNumber=${context.cart.reduce((count, curItem) => {
             return count + curItem.quantity;
@@ -35,7 +35,7 @@ const ProductsPage = () => {
         <main class="${ProductsStyle}">
           <ul>
             ${context.products.map(
-              product => html`
+              (product) => html`
                 <li>
                   <div>
                     <strong>${product.title}</strong> - ${product.price}

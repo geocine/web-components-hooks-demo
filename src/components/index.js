@@ -1,4 +1,4 @@
-import RouterLink from "./RouterLink";
-import MainNavigation from "./MainNavigation";
+import * as RouterLink from './RouterLink.js';
+import * as MainNavigation from './MainNavigation.js';
 
 export { RouterLink, MainNavigation };

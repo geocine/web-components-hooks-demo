@@ -1,5 +1,5 @@
-import { html } from "lit-html";
-import { css } from "goober";
+import { html } from 'https://unpkg.com/lit-html/lit-html.js';
+import { css } from 'https://unpkg.com/goober/dist/goober.module.js';
 
 const CartClass = css`
   width: 50rem;
@@ -28,7 +28,7 @@ const CartClass = css`
 const CartPage = () => {
   return html`
     <shop-consumer
-      .render=${context => html`
+      .render=${(context) => html`
         <main-navigation
           .cartItemNumber=${context.cart.reduce((count, curItem) => {
             return count + curItem.quantity;
@@ -36,14 +36,10 @@ const CartPage = () => {
         >
         </main-navigation>
         <main class="${CartClass}">
-          ${context.cart.length <= 0
-            ? html`
-                <p>No Item in the Cart!</p>
-              `
-            : ""}
+          ${context.cart.length <= 0 ? html` <p>No Item in the Cart!</p> ` : ''}
           <ul>
             ${context.cart.map(
-              cartItem => html`
+              (cartItem) => html`
                 <li>
                   <div>
                     <strong>${cartItem.title}</strong> - ${cartItem.price}

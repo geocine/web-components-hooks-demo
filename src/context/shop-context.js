@@ -1,9 +1,13 @@
-import { useContext, component, createContext } from "haunted";
+import {
+  useContext,
+  component,
+  createContext
+} from 'https://unpkg.com/haunted/haunted.js';
 
 // https://github.com/matthewp/haunted/issues/75
-const createConsumer = Context =>
+const createConsumer = (Context) =>
   component(
-    function({ render }) {
+    function ({ render }) {
       const context = useContext(Context);
 
       return render(context);
@@ -21,5 +25,5 @@ const ShopContext = createContext({
 
 ShopContext.Consumer = createConsumer(ShopContext);
 
-customElements.define("shop-provider", ShopContext.Provider);
-customElements.define("shop-consumer", ShopContext.Consumer);
+customElements.define('shop-provider', ShopContext.Provider);
+customElements.define('shop-consumer', ShopContext.Consumer);

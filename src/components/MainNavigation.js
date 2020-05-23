@@ -1,6 +1,6 @@
-import { html } from "lit-html";
-import { component } from "haunted";
-import { css } from "goober";
+import { html } from 'https://unpkg.com/lit-html/lit-html.js';
+import { component } from 'https://unpkg.com/haunted/haunted.js';
+import { css } from 'https://unpkg.com/goober/dist/goober.module.js';
 
 const MainNavigationStyle = css`
   width: 100%;
@@ -45,7 +45,7 @@ const MainNavigationStyle = css`
   }
 `;
 
-const MainNavigation = ({ cartItemNumber = "0" }) => {
+const MainNavigation = ({ cartItemNumber = '0' }) => {
   return html`
     <header class="${MainNavigationStyle}">
       <nav>
@@ -65,6 +65,6 @@ const MainNavigation = ({ cartItemNumber = "0" }) => {
 export default MainNavigation;
 
 customElements.define(
-  "main-navigation",
+  'main-navigation',
   component(MainNavigation, HTMLElement, { useShadowDOM: false })
 );

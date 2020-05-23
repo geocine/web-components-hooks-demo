@@ -1,12 +1,12 @@
-import Navigo from "navigo";
-import { component } from "haunted";
+import Navigo from 'https://unpkg.com/navigo/lib/navigo.es.js';
+import { component } from 'https://unpkg.com/haunted/haunted.js';
 
 export class Router {
   constructor(root, routes) {
     if (!Router.instance) {
       Router.instance = this;
     } else {
-      throw new Error("use getInstance");
+      throw new Error('use getInstance');
     }
 
     this.router = new Navigo(root, false);
@@ -19,7 +19,7 @@ export class Router {
   }
 
   static inject(component) {
-    const outlet = document.querySelector("app-outlet");
+    const outlet = document.querySelector('app-outlet');
     while (outlet.firstChild) {
       outlet.removeChild(outlet.firstChild);
     }
@@ -27,13 +27,14 @@ export class Router {
   }
 
   init() {
-    this.routes.forEach(route => {
+    console.log(this.routes);
+    this.routes.forEach((route) => {
       this.router
-        .on(route.path, params => {
+        .on(route.path, (params) => {
           if (!customElements.get(route.tag)) {
             customElements.define(
               route.tag,
-              component(route.page, HTMLElement, { useShadowDOM: false })
+              component(route.page, { useShadowDOM: false })
             );
           }
           Router.inject(route.tag);

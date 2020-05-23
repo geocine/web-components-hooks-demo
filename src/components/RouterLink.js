@@ -1,12 +1,13 @@
-import { html } from "lit-html";
-import { component } from "haunted";
-import { Router } from "../router";
+import { html } from 'https://unpkg.com/lit-html/lit-html.js';
+import { component } from 'https://unpkg.com/haunted/haunted.js';
+import { Router } from '../router.js';
 
-const RouterLink = element => {
-  const navigate = e => {
+const RouterLink = (element) => {
+  const navigate = (e) => {
     e.preventDefault();
     const router = Router.instance.router;
-    const link = e.path.find(node => node.nodeName == "A");
+    const path = e.path || (e.composedPath && e.composedPath());
+    const link = path.find((node) => node.nodeName == 'A');
     router.navigate(link.href, true);
   };
   const active = element.to == location.pathname;
@@ -31,13 +32,13 @@ const RouterLink = element => {
     <a
       href="${element.to}"
       @click=${navigate}
-      class="${active ? "active" : ""}"
+      class="${active ? 'active' : ''}"
     >
       <slot></slot>
     </a>
   `;
 };
 
-RouterLink.observedAttributes = ["to"];
+RouterLink.observedAttributes = ['to'];
 
-customElements.define("router-link", component(RouterLink));
+customElements.define('router-link', component(RouterLink));

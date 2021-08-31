@@ -8,7 +8,8 @@ const RouterLink = (element) => {
     const router = Router.instance.router;
     const path = e.path || (e.composedPath && e.composedPath());
     const link = path.find((node) => node.nodeName == 'A');
-    router.navigate(link.href, true);
+    const url = new URL(link.href);
+    router.navigate(url.pathname, true);
   };
   const active = element.to == location.pathname;
 

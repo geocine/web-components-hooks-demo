@@ -1,6 +1,6 @@
 import { html } from 'https://unpkg.com/lit-html/lit-html.js';
 import { component } from 'https://unpkg.com/haunted/haunted.js';
-import { css } from 'https://unpkg.com/goober/dist/goober.module.js';
+import { css } from 'https://unpkg.com/goober/dist/goober.esm.js';
 
 const MainNavigationStyle = css`
   width: 100%;

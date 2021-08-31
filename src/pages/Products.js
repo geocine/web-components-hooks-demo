@@ -1,5 +1,5 @@
 import { html } from 'https://unpkg.com/lit-html/lit-html.js';
-import { css } from 'https://unpkg.com/goober/dist/goober.module.js';
+import { css } from 'https://unpkg.com/goober/dist/goober.esm.js';
 
 const ProductsStyle = css`
   width: 50rem;

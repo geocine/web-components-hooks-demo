@@ -1,4 +1,6 @@
-import { html } from 'https://unpkg.com/lit-html/lit-html.js';
+import { html } from 'https://unpkg.com/haunted/haunted.js';
+// https://github.com/matthewp/haunted/issues/306
+// import { html } from 'https://unpkg.com/lit-html/lit-html.js';
 import { css } from 'https://unpkg.com/goober/dist/goober.esm.js';
 
 const CartClass = css`

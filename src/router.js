@@ -1,5 +1,5 @@
-import Navigo from 'https://unpkg.com/navigo/lib/es/index.js';
-import { component } from 'https://unpkg.com/haunted/haunted.js';
+import Navigo from 'navigo';
+import { component } from 'haunted';
 
 export class Router {
   constructor(root, routes) {

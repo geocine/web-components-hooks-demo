@@ -1,8 +1,5 @@
-import { html } from 'https://unpkg.com/haunted/haunted.js';
-// https://github.com/matthewp/haunted/issues/306
-// import { html } from 'https://unpkg.com/lit-html/lit-html.js';
-import { component } from 'https://unpkg.com/haunted/haunted.js';
-import { css } from 'https://unpkg.com/goober/dist/goober.esm.js';
+import { component, html } from 'haunted';
+import { css } from 'goober';
 
 const MainNavigationStyle = css`
   width: 100%;

@@ -2,7 +2,7 @@ import {
   useContext,
   component,
   createContext
-} from 'https://unpkg.com/haunted/haunted.js';
+} from 'haunted';
 
 // https://github.com/matthewp/haunted/issues/75
 const createConsumer = (Context) =>

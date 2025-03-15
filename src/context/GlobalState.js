@@ -4,10 +4,11 @@ import { shopReducer, ADD_PRODUCT, REMOVE_PRODUCT } from './reducers.js';
 
 const GlobalState = () => {
   const products = [
-    { id: 'p1', title: 'Gaming Mouse', price: 29.99 },
-    { id: 'p2', title: 'Harry Potter 3', price: 9.99 },
-    { id: 'p3', title: 'Used plastic bottle', price: 0.99 },
-    { id: 'p4', title: 'Half-dried plant', price: 2.99 }
+    { id: 'p1', title: 'Exalted Orb', price: 120.99 },
+    { id: 'p2', title: 'Tabula Rasa', price: 15.99 },
+    { id: 'p3', title: 'Divine Orb', price: 180.50 },
+    { id: 'p4', title: 'Headhunter Belt', price: 75.00 },
+    { id: 'p5', title: 'Chaos Orb', price: 1.99 }
   ];
 
   const [cartState, dispatch] = useReducer(shopReducer, { cart: [] });
